@@ -35,8 +35,6 @@ public class Customercontroller {
 	@PostMapping(value = "/customer", consumes = "application/json")
     @ResponseBody
     public Customer add(@RequestBody Customer customer) {
-		//Address address = new Address("5, Wide Street", null, "New York");
-		//Customer customer = new Customer("John Wide", address);
         return customerService.save(customer);
     }
 }
