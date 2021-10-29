@@ -1,0 +1,3 @@
+entity-packages: com.example.Ebeandemo1.model
+transactional-packages: com.example.Ebeandemo1
+querybean-packages: com.example.Ebeandemo1
