@@ -30,8 +30,7 @@ public class Customercontroller {
     @ResponseBody
     public Customer getCustomerByCity(@PathVariable String city) {
         return customerService.getCustomerByCity(city);
-    }
-	
+    }	
 	
 	@PostMapping(value = "/customer", consumes = "application/json")
     @ResponseBody
