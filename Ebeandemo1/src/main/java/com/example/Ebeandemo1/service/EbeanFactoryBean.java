@@ -8,6 +8,7 @@ import io.ebean.EbeanServer;
 import io.ebean.EbeanServerFactory;
 import io.ebean.config.ServerConfig;
 
+
 @Component
 public class EbeanFactoryBean implements FactoryBean<EbeanServer>{
 
