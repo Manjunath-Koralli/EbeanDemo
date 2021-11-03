@@ -12,7 +12,7 @@ public class Customer extends BaseModel {
         super();
         this.name = name;
         this.address = address;
-    }
+     }
 
     private String name;
 
