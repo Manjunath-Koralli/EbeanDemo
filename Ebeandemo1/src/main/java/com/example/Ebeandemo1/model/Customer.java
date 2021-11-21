@@ -1,23 +1,30 @@
 package com.example.Ebeandemo1.model;
 
+import java.io.Serializable;
+import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.OneToOne;
+
+import io.ebean.annotation.DbJson;
+
 
 @Entity
-public class Customer extends BaseModel {
+public class Customer extends BaseModel implements Serializable {
 
-	public Customer(String name, Address address) {
-        super();
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	private String name;
+	
+	@DbJson
+	List<Work_Exp> exp;
+	
+	public Customer(String name) {
+		super();
         this.name = name;
-        this.address = address;
      }
-
-    private String name;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    Address address;
 
 	public String getName() {
 		return name;
@@ -27,11 +34,21 @@ public class Customer extends BaseModel {
 		this.name = name;
 	}
 
-	public Address getAddress() {
-		return address;
+	public List<Work_Exp> getExp() {
+		return exp;
 	}
 
-	public void setAddress(Address address) {
-		this.address = address;
+	public void setExp(List<Work_Exp> exp) {
+		this.exp = exp;
 	}
+
+
+
+//	public Address getAddress() {
+//		return address;
+//	}
+//
+//	public void setAddress(Address address) {
+//		this.address = address;
+//	}
 }

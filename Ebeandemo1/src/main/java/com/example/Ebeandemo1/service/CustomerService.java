@@ -22,12 +22,15 @@ public class CustomerService {
 	
 	public List<Customer> getCustomer() {
         return server.find(Customer.class).findList();
-		//return server.find(Content.class).findList();
     }
 	
-	public Customer getCustomerByCity(String city) {
-        Customer customer = server.find(Customer.class).select("name").fetch("address", "city")
-        		.where().eq("city", city).findOne();
+	public Customer getCustomerByID(Long id) {
+		Customer customer = server.find(Customer.class).where().eq("id", id).findOne();
+        return customer;
+    }
+	
+	public Customer getCustomerExpyearsByID(Long id) {
+		Customer customer = server.find(Customer.class).select("exp").where().eq("id", id).findOne();
         return customer;
     }
 }
